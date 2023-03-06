@@ -2,6 +2,16 @@ package com.intiFormation.entity;
 
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+
 
 
 @Entity
@@ -11,7 +21,6 @@ public class Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private int idPers;
     private String nomPers;
     private String prenomPers;
@@ -19,16 +28,35 @@ public class Personne {
     private String email;
     private String tel;
     
-    @OneToMany
+    
+    @OneToMany(mappedBy = "personne",fetch = FetchType.EAGER)
     private List<RendezVous> rdv;
     
-    @OneToMany
+    
+    @OneToMany(mappedBy = "personne",fetch = FetchType.EAGER)
     private List<Historique> historiques;
-	public int getId() {
-		return id;
+	
+    public Personne(int idPers, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
+			List<Historique> historiques) {
+		super();
+		this.idPers = idPers;
+		this.nomPers = nomPers;
+		this.prenomPers = prenomPers;
+		this.age = age;
+		this.email = email;
+		this.tel = tel;
+		this.rdv = rdv;
+		this.historiques = historiques;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public Personne() 
+	{
+		
+	}
+    public int getId() {
+		return idPers;
+	}
+	public void setId(int idPers) {
+		this.idPers = idPers;
 	}
 	public String getNomPers() {
 		return nomPers;
@@ -72,22 +100,7 @@ public class Personne {
 	public void setHistoriques(List<Historique> historiques) {
 		this.historiques = historiques;
 	}
-	public Personne(int id, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
-			List<Historique> historiques) {
-		super();
-		this.id = id;
-		this.nomPers = nomPers;
-		this.prenomPers = prenomPers;
-		this.age = age;
-		this.email = email;
-		this.tel = tel;
-		this.rdv = rdv;
-		this.historiques = historiques;
-	}
-	public Personne() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 
     
