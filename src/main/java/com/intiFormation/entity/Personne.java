@@ -2,6 +2,15 @@ package com.intiFormation.entity;
 
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+
 
 
 @Entity
@@ -24,11 +33,28 @@ public class Personne {
     
     @OneToMany
     private List<Historique> historiques;
-	public int getId() {
-		return id;
+	
+    public Personne(int id, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
+			List<Historique> historiques) {
+		super();
+		this.idPers = idPers;
+		this.nomPers = nomPers;
+		this.prenomPers = prenomPers;
+		this.age = age;
+		this.email = email;
+		this.tel = tel;
+		this.rdv = rdv;
+		this.historiques = historiques;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public Personne() 
+	{
+		
+	}
+    public int getId() {
+		return idPers;
+	}
+	public void setId(int idPers) {
+		this.idPers = idPers;
 	}
 	public String getNomPers() {
 		return nomPers;
@@ -72,22 +98,7 @@ public class Personne {
 	public void setHistoriques(List<Historique> historiques) {
 		this.historiques = historiques;
 	}
-	public Personne(int id, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
-			List<Historique> historiques) {
-		super();
-		this.id = id;
-		this.nomPers = nomPers;
-		this.prenomPers = prenomPers;
-		this.age = age;
-		this.email = email;
-		this.tel = tel;
-		this.rdv = rdv;
-		this.historiques = historiques;
-	}
-	public Personne() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 
     
