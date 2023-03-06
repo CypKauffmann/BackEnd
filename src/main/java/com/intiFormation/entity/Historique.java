@@ -1,8 +1,15 @@
 package com.intiFormation.entity;
 
 import java.sql.Date;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -11,15 +18,16 @@ public class Historique {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idHist ;
+    @Temporal(TemporalType.DATE)
     private Date dateHist ;
     private String commentaire ;
 
     @ManyToOne
-    @JointColumn(name="idCommercial")
+    @JoinColumn(name="idCommercial")
     private Commercial commercial ;
 
     @ManyToOne
-    @JointColumn(name="idPersonne")
+    @JoinColumn(name="idPersonne")
     private Personne personnes ;
 
 
@@ -34,6 +42,54 @@ public class Historique {
         this.commentaire = commentaire ;
     }
 
+	public int getIdHist() {
+		return idHist;
+	}
 
+	public void setIdHist(int idHist) {
+		this.idHist = idHist;
+	}
+
+	public Date getDateHist() {
+		return dateHist;
+	}
+
+	public void setDateHist(Date dateHist) {
+		this.dateHist = dateHist;
+	}
+
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+
+	public Commercial getCommercial() {
+		return commercial;
+	}
+
+	public void setCommercial(Commercial commercial) {
+		this.commercial = commercial;
+	}
+
+	public Personne getPersonnes() {
+		return personnes;
+	}
+
+	public void setPersonnes(Personne personnes) {
+		this.personnes = personnes;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Historique [idHist=" + idHist + ", dateHist=" + dateHist + ", commentaire=" + commentaire + "]";
+	}
+
+    
+	
 
 }
