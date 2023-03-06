@@ -15,23 +15,18 @@ import javax.persistence.OneToMany;
 @Entity
 @DiscriminatorValue("P")
 public class Participant extends Utilisateur {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPart ;
-	
-	@OneToMany(mappedBy = "participant")
-	private List<Paiement> paiements ;
-	
-	@ManyToMany
-	@JoinTable(name="tabPartPaie", 
-	joinColumns = @JoinColumn(name="idParticipant"),
-	inverseJoinColumns = @JoinColumn(name="idFormation"))
-	private List<Formation> formations ;
 
 	
-	
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idPart;
+
+	@OneToMany(mappedBy = "participant")
+	private List<Paiement> paiements;
+
+	@ManyToMany
+	@JoinTable(name = "tabPartFormation", joinColumns = @JoinColumn(name = "idParticipant"), inverseJoinColumns = @JoinColumn(name = "idFormation"))
+	private List<Formation> formations;
+
 	public Participant() {
 		super();
 	}
@@ -41,14 +36,33 @@ public class Participant extends Utilisateur {
 		this.idPart = idPart;
 	}
 
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Participant [idPart=" + idPart + "]";
 	}
-	
-	
+
+	public int getIdPart() {
+		return idPart;
+	}
+
+	public void setIdPart(int idPart) {
+		this.idPart = idPart;
+	}
+
+	public List<Paiement> getPaiements() {
+		return paiements;
+	}
+
+	public void setPaiements(List<Paiement> paiements) {
+		this.paiements = paiements;
+	}
+
+	public List<Formation> getFormations() {
+		return formations;
+	}
+
+	public void setFormations(List<Formation> formations) {
+		this.formations = formations;
+	}
 
 }

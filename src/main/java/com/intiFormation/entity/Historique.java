@@ -1,6 +1,6 @@
 package com.intiFormation.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,36 +11,32 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
 public class Historique {
 
-    @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idHist ;
-    @Temporal(TemporalType.DATE)
-    private Date dateHist ;
-    private String commentaire ;
+	private int idHist;
+	@Temporal(TemporalType.DATE)
+	private Date dateHist;
+	private String commentaire;
 
-    @ManyToOne
-    @JoinColumn(name="idCommercial")
-    private Commercial commercial ;
+	@ManyToOne
+	@JoinColumn(name = "idCommercial")
+	private Commercial commercial;
 
-    @ManyToOne
-    @JoinColumn(name="idPersonne")
-    private Personne personnes ;
+	@ManyToOne
+	@JoinColumn(name = "idPersonne")
+	private Personne personne;
 
+	public Historique() {
 
-    public Historique()
-    {
+	}
 
-    }
-
-    public Historique(Date dateHist, String commentaire)
-    {
-        this.dateHist = dateHist ;
-        this.commentaire = commentaire ;
-    }
+	public Historique(Date dateHist, String commentaire) {
+		this.dateHist = dateHist;
+		this.commentaire = commentaire;
+	}
 
 	public int getIdHist() {
 		return idHist;
@@ -74,22 +70,17 @@ public class Historique {
 		this.commercial = commercial;
 	}
 
-	public Personne getPersonnes() {
-		return personnes;
+	public Personne getPersonne() {
+		return personne;
 	}
 
-	public void setPersonnes(Personne personnes) {
-		this.personnes = personnes;
+	public void setPersonne(Personne personne) {
+		this.personne = personne;
 	}
 
-	
-	
 	@Override
 	public String toString() {
 		return "Historique [idHist=" + idHist + ", dateHist=" + dateHist + ", commentaire=" + commentaire + "]";
 	}
-
-    
-	
 
 }
