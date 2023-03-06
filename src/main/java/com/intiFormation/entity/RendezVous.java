@@ -14,6 +14,7 @@ public class RendezVous {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRdv;
     private Date dateRdv;
+    
     @ManyToOne
     @JoinColumn(name = "id_rdv")
     private Personne persone;

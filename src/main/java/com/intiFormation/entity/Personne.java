@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,6 @@ public class Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private int idPers;
     private String nomPers;
     private String prenomPers;
@@ -28,13 +28,15 @@ public class Personne {
     private String email;
     private String tel;
     
-    @OneToMany
+    
+    @OneToMany(mappedBy = "personne",fetch = FetchType.EAGER)
     private List<RendezVous> rdv;
     
-    @OneToMany
+    
+    @OneToMany(mappedBy = "personne",fetch = FetchType.EAGER)
     private List<Historique> historiques;
 	
-    public Personne(int id, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
+    public Personne(int idPers, String nomPers, String prenomPers, int age, String email, String tel, List<RendezVous> rdv,
 			List<Historique> historiques) {
 		super();
 		this.idPers = idPers;
