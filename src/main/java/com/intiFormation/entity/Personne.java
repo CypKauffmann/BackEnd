@@ -49,11 +49,11 @@ public class Personne {
 
 	}
 
-	public int getId() {
+	public int getIdPers() {
 		return idPers;
 	}
 
-	public void setId(int idPers) {
+	public void setIdPers(int idPers) {
 		this.idPers = idPers;
 	}
 
