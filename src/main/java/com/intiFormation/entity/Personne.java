@@ -2,9 +2,9 @@ package com.intiFormation.entity;
 
 import java.util.List;
 
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,13 +12,19 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.DiscriminatorOptions;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "RoleP")
+/*
+@DiscriminatorOptions(force = true)
+@DiscriminatorColumn(name = "RoleP")*/
 public class Personne {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idPers;
 	private String nomPers;
 	private String prenomPers;
@@ -27,9 +33,11 @@ public class Personne {
 	private String tel;
 
 	@OneToMany(mappedBy = "personne")
+	@JsonIgnore
 	private List<RendezVous> rendezVous;
 
 	@OneToMany(mappedBy = "personne")
+	@JsonIgnore
 	private List<Historique> historiques;
 
 	public Personne(int idPers, String nomPers, String prenomPers, int age, String email, String tel,

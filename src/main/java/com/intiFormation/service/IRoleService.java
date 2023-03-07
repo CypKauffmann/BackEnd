@@ -10,4 +10,6 @@ public interface IRoleService {
 	public Optional<Role> selectById(int id);
 
 	public List<Role> getAllRoles();
-}
+
+	public Role ajout(Role role);
+	}
