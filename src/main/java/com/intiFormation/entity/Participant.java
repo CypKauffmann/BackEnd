@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue("P")
 public class Participant extends Utilisateur {
 
-	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPart;
 
