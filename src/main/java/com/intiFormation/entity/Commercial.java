@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @DiscriminatorValue("C")
 public class Commercial extends Utilisateur {
@@ -18,9 +20,12 @@ public class Commercial extends Utilisateur {
 	private int idComm;
 
 	@OneToMany(mappedBy = "commercial")
+	@JsonIgnore
 	private List<RendezVous> rendezVous;
 
+	
 	@OneToMany(mappedBy = "commercial")
+	@JsonIgnore
 	private List<Historique> historiques;
 
 	public int getIdComm() {
