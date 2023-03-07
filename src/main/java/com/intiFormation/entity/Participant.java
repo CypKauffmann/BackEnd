@@ -12,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @DiscriminatorValue("P")
 public class Participant extends Utilisateur {
@@ -20,6 +22,7 @@ public class Participant extends Utilisateur {
 	private int idPart;
 
 	@OneToMany(mappedBy = "participant")
+	@JsonIgnore
 	private List<Paiement> paiements;
 
 	@ManyToMany
