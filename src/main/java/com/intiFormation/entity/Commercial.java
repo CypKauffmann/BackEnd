@@ -58,6 +58,6 @@ public class Commercial extends Utilisateur {
 		super();
 	}
 
-	
+	//Bonjour
 
 }
