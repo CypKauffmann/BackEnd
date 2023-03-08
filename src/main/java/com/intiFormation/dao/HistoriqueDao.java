@@ -8,7 +8,6 @@ import com.intiFormation.entity.Historique;
 
 public interface HistoriqueDao extends JpaRepository<Historique, Integer> {
 	
-	public List<Historique> findByCommercial_idComm(int id);
 	public List<Historique> findByPersonne_idPers(int id);
 
 }

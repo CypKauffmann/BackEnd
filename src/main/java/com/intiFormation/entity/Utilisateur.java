@@ -14,8 +14,7 @@ import javax.persistence.OneToMany;
 public class Utilisateur extends Personne {
 
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUt;
+
 	private String username;
 	private String password;
 
@@ -23,13 +22,9 @@ public class Utilisateur extends Personne {
 	@JoinColumn(name = "idRole")
 	private Role role;
 
-	public int getIdUt() {
-		return idUt;
-	}
+	
 
-	public void setIdUt(int idUt) {
-		this.idUt = idUt;
-	}
+	
 
 	public String getUsername() {
 		return username;
@@ -56,10 +51,9 @@ public class Utilisateur extends Personne {
 	}
 
 	public Utilisateur(int idPers, String nomPers, String prenomPers, int age, String email, String tel,
-			List<RendezVous> rendezVous, List<Historique> historiques, int idUt, String username, String password,
+			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password,
 			Role role) {
 		super(idPers, nomPers, prenomPers, age, email, tel, rendezVous, historiques);
-		this.idUt = idUt;
 		this.username = username;
 		this.password = password;
 		this.role = role;
@@ -72,7 +66,7 @@ public class Utilisateur extends Personne {
 
 	@Override
 	public String toString() {
-		return "Utilisateur [idUt=" + idUt + ", username=" + username + ", password=" + password + "]";
+		return "Utilisateur [idUt="  + ", username=" + username + ", password=" + password + "]";
 	}
 
 }

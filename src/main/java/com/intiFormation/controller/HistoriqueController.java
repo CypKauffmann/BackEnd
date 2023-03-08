@@ -37,11 +37,7 @@ public class HistoriqueController {
 		return histservice.selectById(id) ;
 	}
 	
-	@GetMapping("/historiquesByComm/{id}")
-	public List<Historique> afficherByIdComm(@PathVariable("id") int id)
-	{
-		return histservice.selectHistByIdComm(id) ;
-	}
+	
 	
 	@GetMapping("/historiquesByPers/{id}")
 	public List<Historique> afficherByIdPers(@PathVariable("id") int id)
