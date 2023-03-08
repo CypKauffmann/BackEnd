@@ -15,37 +15,32 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @DiscriminatorValue("C")
 public class Commercial extends Utilisateur {
 
-	
 	@OneToMany(mappedBy = "commercial")
 	@JsonIgnore
-	private List<RendezVous> rendezVous;
+	private List<RendezVous> rendezVousC;
 
-	
 	@OneToMany(mappedBy = "commercial")
 	@JsonIgnore
-	private List<Historique> historiques;
+	private List<Historique> historiquesC;
 
-
-	public List<RendezVous> getRendezVous() {
-		return rendezVous;
+	public List<RendezVous> getRendezVousC() {
+		return rendezVousC;
 	}
 
-	public void setRendezVous(List<RendezVous> rendezVous) {
-		this.rendezVous = rendezVous;
+	public void setRendezVousC(List<RendezVous> rendezVousC) {
+		this.rendezVousC = rendezVousC;
 	}
 
-	public List<Historique> getHistoriques() {
-		return historiques;
+	public List<Historique> getHistoriquesC() {
+		return historiquesC;
 	}
 
-	public void setHistoriques(List<Historique> historiques) {
-		this.historiques = historiques;
+	public void setHistoriquesC(List<Historique> historiquesC) {
+		this.historiquesC = historiquesC;
 	}
-
 
 	public Commercial() {
 		super();
 	}
-
 
 }

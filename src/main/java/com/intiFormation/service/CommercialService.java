@@ -36,15 +36,15 @@ public class CommercialService implements ICommercialService {
 	}
 	
 	//find by id rdv
-	public Commercial selectCommByIdRdv(int id)
+	public Commercial selectCommByIdRdvC(int id)
 	{
-		return commercialdao.findByRendezVous_idRdv(id) ;
+		return commercialdao.findByRendezVousC_idRdv(id) ;
 	}
 	
 	//find by id historique
-	public Commercial selectCommByIdHist(int id)
+	public Commercial selectCommByIdHistC(int id)
 	{
-		return commercialdao.findByHistoriques_idHist(id) ;
+		return commercialdao.findByHistoriquesC_idHist(id) ;
 	}
 
 }

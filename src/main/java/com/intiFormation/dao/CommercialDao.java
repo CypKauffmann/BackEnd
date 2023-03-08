@@ -6,7 +6,7 @@ import com.intiFormation.entity.Commercial;
 
 public interface CommercialDao extends JpaRepository<Commercial, Integer> {
 	
-	public Commercial findByRendezVous_idRdv(int id) ;
-	public Commercial findByHistoriques_idHist(int id) ;
+	public Commercial findByRendezVousC_idRdv(int id) ;
+	public Commercial findByHistoriquesC_idHist(int id) ;
 
 }

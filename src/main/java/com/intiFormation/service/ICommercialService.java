@@ -10,7 +10,7 @@ public interface ICommercialService {
 	public void supprimeCom(int id);
 	public List<Commercial> selectAll();
 	public Commercial selectById(int id);
-	public Commercial selectCommByIdRdv(int id);
-	public Commercial selectCommByIdHist(int id);
+	public Commercial selectCommByIdRdvC(int id);
+	public Commercial selectCommByIdHistC(int id);
 
 }

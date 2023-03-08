@@ -41,13 +41,13 @@ public class CommercialController {
 	@GetMapping("/commercialsByHist/{id}")
 	public Commercial afficherByIdHist(@PathVariable("id") int id)
 	{
-		return commercialservice.selectCommByIdHist(id) ;
+		return commercialservice.selectCommByIdHistC(id) ;
 	}
 	
 	@GetMapping("/commercialsByRdv/{id}")
 	public Commercial afficherByIdRdv(@PathVariable("id") int id)
 	{
-		return commercialservice.selectCommByIdRdv(id) ;
+		return commercialservice.selectCommByIdRdvC(id) ;
 	}
 	
 	@PostMapping("/commercials")
