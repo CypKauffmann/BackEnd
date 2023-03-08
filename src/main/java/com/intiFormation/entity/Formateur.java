@@ -15,21 +15,13 @@ import javax.persistence.ManyToMany;
 @DiscriminatorValue("F")
 public class Formateur extends Utilisateur {
 
-	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idForm;
+
 
 	@ManyToMany
 	@JoinTable(name = "tabFormateurFormation", joinColumns = @JoinColumn(name = "idFormateur"), inverseJoinColumns = @JoinColumn(name = "idFormation"))
 	private List<Formation> formations;
 
-	public int getIdForm() {
-		return idForm;
-	}
 
-	public void setIdForm(int idForm) {
-		this.idForm = idForm;
-	}
 
 	public List<Formation> getFormations() {
 		return formations;
@@ -39,11 +31,6 @@ public class Formateur extends Utilisateur {
 		this.formations = formations;
 	}
 
-	public Formateur(int idForm, List<Formation> formations) {
-		super();
-		this.idForm = idForm;
-		this.formations = formations;
-	}
 
 	public Formateur() {
 		super();
