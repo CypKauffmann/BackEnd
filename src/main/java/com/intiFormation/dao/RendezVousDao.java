@@ -8,7 +8,6 @@ import com.intiFormation.entity.RendezVous;
 
 public interface RendezVousDao extends JpaRepository<RendezVous, Integer> {
 	
-	public List<RendezVous> findByCommercial_idComm(int id);
 	public List<RendezVous> findByPersonne_idPers(int id);
 
 }
