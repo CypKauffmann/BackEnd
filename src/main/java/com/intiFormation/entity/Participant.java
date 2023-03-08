@@ -18,8 +18,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @DiscriminatorValue("P")
 public class Participant extends Utilisateur {
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPart;
 
 	@OneToMany(mappedBy = "participant")
 	@JsonIgnore
@@ -33,23 +31,14 @@ public class Participant extends Utilisateur {
 		super();
 	}
 
-	public Participant(int idPart) {
-		super();
-		this.idPart = idPart;
-	}
 
-	@Override
-	public String toString() {
-		return "Participant [idPart=" + idPart + "]";
-	}
-
-	public int getIdPart() {
-		return idPart;
-	}
-
-	public void setIdPart(int idPart) {
-		this.idPart = idPart;
-	}
+//	public int getIdPart() {
+//		return idPart;
+//	}
+//
+//	public void setIdPart(int idPart) {
+//		this.idPart = idPart;
+//	}
 
 	public List<Paiement> getPaiements() {
 		return paiements;

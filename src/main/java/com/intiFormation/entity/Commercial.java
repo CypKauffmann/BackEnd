@@ -16,9 +16,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Commercial extends Utilisateur {
 
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idComm;
-
 	@OneToMany(mappedBy = "commercial")
 	@JsonIgnore
 	private List<RendezVous> rendezVous;
@@ -28,13 +25,6 @@ public class Commercial extends Utilisateur {
 	@JsonIgnore
 	private List<Historique> historiques;
 
-	public int getIdComm() {
-		return idComm;
-	}
-
-	public void setIdComm(int idComm) {
-		this.idComm = idComm;
-	}
 
 	public List<RendezVous> getRendezVous() {
 		return rendezVous;
@@ -52,17 +42,10 @@ public class Commercial extends Utilisateur {
 		this.historiques = historiques;
 	}
 
-	public Commercial(int idComm, List<RendezVous> rendezVous, List<Historique> historiques) {
-		super();
-		this.idComm = idComm;
-		this.rendezVous = rendezVous;
-		this.historiques = historiques;
-	}
 
 	public Commercial() {
 		super();
 	}
 
-	//Bonjour
 
 }
