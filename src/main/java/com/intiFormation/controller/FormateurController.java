@@ -49,7 +49,7 @@ public class FormateurController {
 		formateurService.modif(formateur);
 	}
 
-	//trouver un
+	//trouver un formateur par Id
 	@GetMapping("/formateurs/{idFormateur}")
 	public Formateur selectByidForm(@PathVariable("idFormateur") int idFormateur)
 	{
