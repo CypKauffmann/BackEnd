@@ -36,11 +36,6 @@ public class HistoriqueService implements IHistoriqueService {
 		return historiquedao.findById(id).get() ;
 	}
 	
-	//find by id commercial
-	public List<Historique> selectHistByIdComm(int id)
-	{
-		return historiquedao.findByCommercial_idComm(id) ;
-	}
 	
 	//find by id personne
 	public List<Historique> selectHistByIdPers(int id)

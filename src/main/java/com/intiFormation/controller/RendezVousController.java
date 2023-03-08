@@ -38,11 +38,6 @@ public class RendezVousController {
 		return rdvservice.selectById(id) ;
 	}
 	
-	@GetMapping("/rendezvousByComm/{id}")
-	public List<RendezVous> afficherByIdComm(@PathVariable("id") int id)
-	{
-		return rdvservice.selectRdvByIdComm(id) ;
-	}
 	
 	@GetMapping("/rendezvousByPers/{id}")
 	public List<RendezVous> afficherByIdPers(@PathVariable("id") int id)

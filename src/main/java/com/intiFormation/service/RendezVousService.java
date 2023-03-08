@@ -36,12 +36,7 @@ public class RendezVousService implements IRendezVousService {
 		return rdvdao.findById(id).get() ;
 	}
 	
-	//find by id commercial
-	public List<RendezVous> selectRdvByIdComm(int id)
-	{
-		return rdvdao.findByCommercial_idComm(id) ;
-	}
-	
+
 	//find by id personne
 	public List<RendezVous> selectRdvByIdPers(int id)
 	{
