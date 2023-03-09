@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.FormateurDao;
 import com.intiFormation.entity.Formateur;
-import com.intiFormation.entity.Paiement;
 
 @Service
 public class FormateurService implements IFormateurService{
