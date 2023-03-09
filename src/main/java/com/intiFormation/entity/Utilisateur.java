@@ -11,14 +11,12 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Utilisateur extends Personne {
 
-
 	private String username;
 	private String password;
 
 	@ManyToOne
 	@JoinColumn(name = "idRole")
 	private Role role;
-
 
 	public String getUsername() {
 		return username;
@@ -54,16 +52,12 @@ public class Utilisateur extends Personne {
 
 	public Utilisateur() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
 	@Override
 	public String toString() {
-
 		return "Utilisateur [username=" + username + ", password=" + password + "]";
-
-
 	}
 
 }
