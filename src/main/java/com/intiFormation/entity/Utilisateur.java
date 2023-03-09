@@ -1,5 +1,7 @@
 package com.intiFormation.entity;
 
+
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,12 +11,14 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Utilisateur extends Personne {
 
+
 	private String username;
 	private String password;
 
 	@ManyToOne
 	@JoinColumn(name = "idRole")
 	private Role role;
+
 
 	public String getUsername() {
 		return username;
@@ -56,7 +60,10 @@ public class Utilisateur extends Personne {
 
 	@Override
 	public String toString() {
-		return "Utilisateur [idUt=" + ", username=" + username + ", password=" + password + "]";
+
+		return "Utilisateur [username=" + username + ", password=" + password + "]";
+
+
 	}
 
 }
