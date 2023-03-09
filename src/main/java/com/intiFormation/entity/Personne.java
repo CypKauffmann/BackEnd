@@ -2,10 +2,6 @@ package com.intiFormation.entity;
 
 import java.util.List;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +10,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity

@@ -11,10 +11,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Utilisateur extends Personne {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 	private String username;
 	private String password;
 
@@ -22,10 +18,6 @@ public class Utilisateur extends Personne {
 	@JoinColumn(name = "idRole")
 	private Role role;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 	public String getUsername() {
 		return username;
 	}
@@ -50,10 +42,6 @@ public class Utilisateur extends Personne {
 		this.role = role;
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 	public Utilisateur(int idPers, String nomPers, String prenomPers, int age, String email, String tel,
 			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password, Role role) {
 		super(idPers, nomPers, prenomPers, age, email, tel, rendezVous, historiques);
@@ -62,10 +50,6 @@ public class Utilisateur extends Personne {
 		this.role = role;
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 	public Utilisateur() {
 		super();
 	}
@@ -73,14 +57,7 @@ public class Utilisateur extends Personne {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
 		return "Utilisateur [username=" + username + ", password=" + password + "]";
-=======
-
-		return "Utilisateur [username=" + username + ", password=" + password + "]";
-
-
->>>>>>> main
 	}
 
 }
