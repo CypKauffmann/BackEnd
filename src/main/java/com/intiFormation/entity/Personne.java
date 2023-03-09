@@ -3,7 +3,6 @@ package com.intiFormation.entity;
 import java.util.List;
 
 
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +11,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.DiscriminatorOptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -56,6 +54,11 @@ public class Personne {
 	public Personne() {
 
 	}
+	
+	public Personne(int idPers) {
+	    this.idPers = idPers;
+	}
+
 
 	public int getIdPers() {
 		return idPers;

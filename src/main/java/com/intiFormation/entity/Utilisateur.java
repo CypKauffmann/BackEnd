@@ -3,17 +3,11 @@ package com.intiFormation.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Utilisateur extends Personne {
-
-
 
 	private String username;
 	private String password;
@@ -21,10 +15,6 @@ public class Utilisateur extends Personne {
 	@ManyToOne
 	@JoinColumn(name = "idRole")
 	private Role role;
-
-	
-
-	
 
 	public String getUsername() {
 		return username;
@@ -51,8 +41,7 @@ public class Utilisateur extends Personne {
 	}
 
 	public Utilisateur(int idPers, String nomPers, String prenomPers, int age, String email, String tel,
-			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password,
-			Role role) {
+			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password, Role role) {
 		super(idPers, nomPers, prenomPers, age, email, tel, rendezVous, historiques);
 		this.username = username;
 		this.password = password;
@@ -64,9 +53,10 @@ public class Utilisateur extends Personne {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	@Override
 	public String toString() {
-		return "Utilisateur [idUt="  + ", username=" + username + ", password=" + password + "]";
+		return "Utilisateur [idUt=" + ", username=" + username + ", password=" + password + "]";
 	}
 
 }

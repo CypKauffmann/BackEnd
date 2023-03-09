@@ -41,6 +41,7 @@ public class UtilisateurController {
 
 	@PostMapping("/")
 	public void addUtilisateur(@RequestBody Utilisateur utilisateur) {
+		System.out.println(utilisateur.getNomPers());
 		utilisateurService.addUtilisateur(utilisateur);
 	}
 
@@ -53,5 +54,10 @@ public class UtilisateurController {
 	public void deleteUtilisateur(@PathVariable int id) {
 		utilisateurService.deleteutilisateur(id);
 	}
+
+	
+
+
+
 
 }
