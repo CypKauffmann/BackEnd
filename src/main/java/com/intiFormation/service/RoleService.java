@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.RoleDao;
-import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Role;
 
 @Service

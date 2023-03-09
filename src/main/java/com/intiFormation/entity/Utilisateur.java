@@ -12,9 +12,6 @@ import javax.persistence.ManyToOne;
 public class Utilisateur extends Personne {
 
 
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//private int idUt;
-
 	private String username;
 	private String password;
 
@@ -22,14 +19,6 @@ public class Utilisateur extends Personne {
 	@JoinColumn(name = "idRole")
 	private Role role;
 
-/*	public int getIdUt() {
-		return idUt;
-	}
-
-	public void setIdUt(int idUt) {
-		this.idUt = idUt;
-	}
-*/
 
 	public String getUsername() {
 		return username;
@@ -56,8 +45,7 @@ public class Utilisateur extends Personne {
 	}
 
 	public Utilisateur(int idPers, String nomPers, String prenomPers, int age, String email, String tel,
-			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password,
-			Role role) {
+			List<RendezVous> rendezVous, List<Historique> historiques, String username, String password, Role role) {
 		super(idPers, nomPers, prenomPers, age, email, tel, rendezVous, historiques);
 		this.username = username;
 		this.password = password;
@@ -69,10 +57,12 @@ public class Utilisateur extends Personne {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	@Override
 	public String toString() {
 
 		return "Utilisateur [username=" + username + ", password=" + password + "]";
+
 
 	}
 
