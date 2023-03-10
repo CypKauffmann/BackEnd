@@ -2,6 +2,8 @@ package com.intiFormation.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +49,27 @@ public class UtilisateurService implements IUtilisateurservice {
 		}
 	}
 
+
+	@Override
+	@Transactional
+	public void assignParticipant(Long idPers) {
+	    utilisateurDao.addParticipant(idPers);
+	    utilisateurDao.assignParticipantRole(idPers);
+	}
+
+	@Override
+	@Transactional
+	public void assignFormateur(Long idPers) {
+	    utilisateurDao.addFormateur(idPers);
+	    utilisateurDao.assignFormateurRole(idPers);
+	}
+
+	@Override
+	@Transactional
+	public void assignCommercial(Long idPers) {
+	    utilisateurDao.addCommercial(idPers);
+	    utilisateurDao.assignCommercialRole(idPers);
+	}
 
 
 
