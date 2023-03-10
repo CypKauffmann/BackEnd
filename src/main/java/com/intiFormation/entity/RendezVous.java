@@ -8,6 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class RendezVous {
@@ -15,6 +21,8 @@ public class RendezVous {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idRdv;
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, locale = "fr_FR", timezone = "Europe/Amsterdam")
 	private Date dateRdv;
 
 	@ManyToOne
