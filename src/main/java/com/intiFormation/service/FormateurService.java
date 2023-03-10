@@ -13,8 +13,9 @@ import com.intiFormation.entity.Formateur;
 public class FormateurService implements IFormateurService{
 	
 	@Autowired
-	FormateurDao formateurdao;
+	private FormateurDao formateurdao;
 	
+
 	
 		public Formateur ajout(Formateur paiement)
 		{
@@ -52,5 +53,11 @@ public class FormateurService implements IFormateurService{
 			return formateurdao.findById(idFormateur).get();
 		}
 		
+		public List<Formateur> getFormateursWithFormations() {
+	        return formateurdao.findAllWithFormations();
+	    }
 
-}
+		
+	}
+
+

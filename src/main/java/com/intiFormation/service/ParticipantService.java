@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.intiFormation.dao.ParticipantDao;
 import com.intiFormation.entity.Participant;
 
@@ -29,7 +28,12 @@ public class ParticipantService implements IParticipantService {
 	public List<Participant> getAllParticipants() {
 		return participantDao.findAll();
 	}
-
+	
+	public List<Participant> getFormationsWithParticipants()
+	{
+		return participantDao.findAllWithParticipants();
+	}
+	
 
 }
 	

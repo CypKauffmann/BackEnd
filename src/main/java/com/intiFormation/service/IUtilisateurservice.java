@@ -5,9 +5,12 @@ import java.util.List;
 import com.intiFormation.entity.Utilisateur;
 
 public interface IUtilisateurservice {
+	
+	public void deleteutilisateur(int id);
+	
+	
 	void addUtilisateur(Utilisateur utilisateur);
 
-	void deleteutilisateur(int id);
 
 	void updateParticipant(Utilisateur utilisateur);
 
@@ -22,4 +25,5 @@ public interface IUtilisateurservice {
 	public void assignFormateur(Long idPers);
 
 	public void assignCommercial(Long idPers);
+
 }
