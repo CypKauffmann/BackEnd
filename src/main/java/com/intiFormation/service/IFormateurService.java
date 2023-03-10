@@ -27,4 +27,6 @@ public interface IFormateurService {
 	
 	public Formateur recupererParId(int idFormateur);
 	
+	public List<Formateur> getFormateursWithFormations();
+	
 }

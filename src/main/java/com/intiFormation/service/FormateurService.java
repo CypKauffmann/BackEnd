@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.FormateurDao;
 import com.intiFormation.entity.Formateur;
-import com.intiFormation.entity.Paiement;
 
 @Service
 public class FormateurService implements IFormateurService{
 	
 	@Autowired
-	FormateurDao formateurdao;
+	private FormateurDao formateurdao;
 	
+
 	
 		public Formateur ajout(Formateur paiement)
 		{
@@ -53,5 +53,11 @@ public class FormateurService implements IFormateurService{
 			return formateurdao.findById(idFormateur).get();
 		}
 		
+		public List<Formateur> getFormateursWithFormations() {
+	        return formateurdao.findAllWithFormations();
+	    }
 
-}
+		
+	}
+
+

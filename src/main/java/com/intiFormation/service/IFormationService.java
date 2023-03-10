@@ -1,8 +1,8 @@
 package com.intiFormation.service;
 
 import java.util.List;
-import java.util.Optional;
 
+import java.util.Optional;
 import com.intiFormation.entity.Formation;
 
 public interface IFormationService {
@@ -18,5 +18,7 @@ public interface IFormationService {
 	public Optional<Formation> chercherParIdidForm (int idForm);
 	
 	public Formation recupererParId(int id);
+	
+	
 
 }

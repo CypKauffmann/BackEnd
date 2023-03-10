@@ -18,7 +18,7 @@ public class Formation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idForm;
+	private Integer idForm;
 	private String nomForm;
 	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
@@ -39,13 +39,15 @@ public class Formation {
 	@JsonIgnore
 	private List<Paiement> paiements;
 
-	public int getIdForm() {
+	public Integer getIdForm() {
 		return idForm;
 	}
 
-	public void setIdForm(int idForm) {
+
+	public void setIdForm(Integer idForm) {
 		this.idForm = idForm;
 	}
+
 
 	public String getNomForm() {
 		return nomForm;
@@ -111,7 +113,7 @@ public class Formation {
 		this.paiements = paiements;
 	}
 
-	public Formation(int idForm, String nomForm, Date dateDebut, Date dateFin, double prix, int duree,
+	public Formation(Integer idForm, String nomForm, Date dateDebut, Date dateFin, double prix, int duree,
 			List<Formateur> formateurs, List<Participant> participants, List<Paiement> paiements) {
 		super();
 		this.idForm = idForm;
@@ -127,6 +129,11 @@ public class Formation {
 
 	public Formation() {
 		super();
+	}
+
+	public Object getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
