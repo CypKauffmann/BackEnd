@@ -1,6 +1,5 @@
 package com.intiFormation.controller;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Participant;
-import com.intiFormation.service.IFormationService;
 import com.intiFormation.service.IParticipantService;
 
 @RestController
