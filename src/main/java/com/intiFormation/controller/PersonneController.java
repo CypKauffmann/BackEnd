@@ -25,7 +25,6 @@ public class PersonneController {
 	private IPersonneService personneservice ;
 	
 	
-	
 	@GetMapping("/personnes")
 	public List<Personne> afficherAll()
 	{
@@ -62,7 +61,7 @@ public class PersonneController {
 		personneservice.supprimePers(id) ;
 	}
 	
-	@PutMapping("/personnes")
+	@PutMapping(value = "/personnes", produces = "application/json")
 	public void modifier(@RequestBody Personne pers)
 	{
 		personneservice.ajoutPers(pers) ;

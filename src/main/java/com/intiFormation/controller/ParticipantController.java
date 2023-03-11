@@ -1,5 +1,6 @@
 package com.intiFormation.controller;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Participant;
+import com.intiFormation.service.IFormationService;
 import com.intiFormation.service.IParticipantService;
 
 @RestController
@@ -25,14 +27,15 @@ public class ParticipantController {
 	@Autowired
 	private IParticipantService participantService;
 
+
 	@GetMapping("/")
 	public List<Participant> getAllParticipants() {
 		return participantService.getAllParticipants();
 	}
 
 
-	@GetMapping("/participants")
-	  public List<Participant> afficherFormationsAvecParticipants() {
+	@GetMapping("/formations")
+	  public List<Participant> getParticipantsandFormations() {
 	    return participantService.getFormationsWithParticipants();
 	  }
 	
@@ -51,4 +54,5 @@ public class ParticipantController {
 	public void updateParticipant(@RequestBody Participant participant) {
 		participantService.updateParticipant(participant);
 	}
+	
 }
