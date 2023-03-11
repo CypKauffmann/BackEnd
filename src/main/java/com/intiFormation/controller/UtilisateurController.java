@@ -74,7 +74,4 @@ public class UtilisateurController {
 	    return "Rôle commercial affecté avec succès à l'utilisateur d'id " + idPers;
 	}
 
-
-
-
 }
