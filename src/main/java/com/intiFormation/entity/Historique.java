@@ -11,13 +11,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Historique {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idHist;
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, locale = "fr_FR", timezone = "Europe/Amsterdam")
 	private Date dateHist;
 	private String commentaire;
 
