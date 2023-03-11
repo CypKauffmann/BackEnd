@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IPaiementService;
@@ -39,6 +39,8 @@ public List<Paiement> afficher()
     }
 	return paiements;
 }
+
+
 
 //ajout d'un paiement
 @PostMapping("/paiements")
@@ -69,6 +71,7 @@ public void deletePaiement(@PathVariable("idPaie") int idPaie)
 {
 	paiementService.suppression(idPaie);
 }
+
 
 
 }

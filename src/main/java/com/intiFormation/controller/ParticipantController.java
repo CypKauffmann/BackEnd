@@ -24,14 +24,15 @@ public class ParticipantController {
 	@Autowired
 	private IParticipantService participantService;
 
+
 	@GetMapping("/")
 	public List<Participant> getAllParticipants() {
 		return participantService.getAllParticipants();
 	}
 
 
-	@GetMapping("/participants")
-	  public List<Participant> afficherFormationsAvecParticipants() {
+	@GetMapping("/formations")
+	  public List<Participant> getParticipantsandFormations() {
 	    return participantService.getFormationsWithParticipants();
 	  }
 	
@@ -50,4 +51,5 @@ public class ParticipantController {
 	public void updateParticipant(@RequestBody Participant participant) {
 		participantService.updateParticipant(participant);
 	}
+	
 }
