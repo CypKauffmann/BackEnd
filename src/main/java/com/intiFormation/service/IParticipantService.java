@@ -15,4 +15,5 @@ public interface IParticipantService {
 	public void addParticipantToFormation(int idFormation, int idParticipant);
 	public void removeParticipantFromFormation(int idForm, int idPers);
 
+
 }

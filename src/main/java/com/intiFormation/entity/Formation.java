@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +33,9 @@ public class Formation {
     @JsonIgnoreProperties("formations")
 	private List<Formateur> formateurs;
 
-	@ManyToMany(mappedBy = "formations")
+	@ManyToMany(mappedBy = "formations", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("formations")
+	@JsonIgnore
 	private List<Participant> participants;
 
 	@ManyToMany(mappedBy = "formations")
@@ -132,11 +134,21 @@ public class Formation {
 		super();
 	}
 
-	public Object getId() {
-		// TODO Auto-generated method stub
-		return null;
+
+	public Formation(String nomForm, Date dateDebut, Date dateFin, double prix, int duree,
+			List<Participant> participants) {
+		super();
+		this.nomForm = nomForm;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.prix = prix;
+		this.duree = duree;
+		this.participants = participants;
 	}
 
+
+
 	
+
 
 }

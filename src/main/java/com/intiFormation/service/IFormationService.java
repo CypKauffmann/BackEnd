@@ -4,6 +4,7 @@ import java.util.List;
 
 import java.util.Optional;
 import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Paiement;
 
 public interface IFormationService {
 	
@@ -18,7 +19,10 @@ public interface IFormationService {
 	public Optional<Formation> chercherParIdidForm (int idForm);
 	
 	public Formation recupererParId(int id);
+
+	public List<Formation> getAllFormationsWithPaiements() ;
+	public List<Paiement> getPaiementsByFormation(int idFormation);
 	
-	 public List<Formation> getAllFormationsWithParticipantsAndFormateurs() ;
+ public List<Formation> getAllFormationsWithParticipantsAndFormateurs() ;
 
 }

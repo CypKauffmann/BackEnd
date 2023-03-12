@@ -21,6 +21,7 @@ public class ParticipantService implements IParticipantService {
 	@Autowired
 	private FormationDao formatiodao;
 
+	
 	public void addParticipant(Participant participant) {
 		participantDao.save(participant);
 	}
@@ -60,8 +61,7 @@ public class ParticipantService implements IParticipantService {
 	
 	
 	
-	
-	
+
 
 }
 	

@@ -30,14 +30,15 @@ public class ParticipantController {
 	@Autowired
 	private IFormationService formationService;
 
+
 	@GetMapping("/")
 	public List<Participant> getAllParticipants() {
 		return participantService.getAllParticipants();
 	}
 
 
-	@GetMapping("/participants")
-	  public List<Participant> afficherFormationsAvecParticipants() {
+	@GetMapping("/formations")
+	  public List<Participant> getParticipantsandFormations() {
 	    return participantService.getFormationsWithParticipants();
 	  }
 	
@@ -68,6 +69,7 @@ public class ParticipantController {
 	   participantService.removeParticipantFromFormation(idForm, idPers);
 	    return ResponseEntity.ok("Participant supprimé de la formation !");
 	  }
+
 
 
 }
