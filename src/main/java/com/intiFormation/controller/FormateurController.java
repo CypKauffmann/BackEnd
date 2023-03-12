@@ -25,20 +25,14 @@ public class FormateurController {
 	@Autowired
 	private IFormateurService formateurService;
 	
+	
+	
 	@GetMapping("/formateurs")
     public List<Formateur> afficherFormateurAvecFormation() {
         return formateurService.getFormateursWithFormations();
     }
 	
-	//afficher la liste 
-	/*@GetMapping("/formateurs")
-	public List<Formateur> afficher()
-	{
-		List< Formateur> formateurs = formateurService.selectAllFormateur();
 	
-		return formateurs;
-	}
-*/
 	//ajout 
 	@PostMapping("/formateurs")
 	public void ajouterFormateur(@RequestBody Formateur form)

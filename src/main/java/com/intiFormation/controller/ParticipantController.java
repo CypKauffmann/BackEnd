@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IParticipantService;
 
@@ -25,14 +24,15 @@ public class ParticipantController {
 	@Autowired
 	private IParticipantService participantService;
 
+
 	@GetMapping("/")
 	public List<Participant> getAllParticipants() {
 		return participantService.getAllParticipants();
 	}
 
 
-	@GetMapping("/participants")
-	  public List<Participant> afficherFormationsAvecParticipants() {
+	@GetMapping("/formations")
+	  public List<Participant> getParticipantsandFormations() {
 	    return participantService.getFormationsWithParticipants();
 	  }
 	
@@ -51,4 +51,5 @@ public class ParticipantController {
 	public void updateParticipant(@RequestBody Participant participant) {
 		participantService.updateParticipant(participant);
 	}
+	
 }

@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.FormationDao;
 import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Paiement;
 
 @Service
 public class FormationService implements IFormationService{
 
+	
 	@Autowired
 	private FormationDao formatiodao;
 	
@@ -54,7 +56,20 @@ public class FormationService implements IFormationService{
 		return formatiodao.findById(id).get();
 	}
 	
+	public List<Formation> getAllFormationsWithPaiements() {
+        List<Formation> formations = formatiodao.findAll();
+        for (Formation formation : formations) {
+            List<Paiement> paiements = formation.getPaiements();
+            paiements.size(); // Force le chargement des paiements depuis la base de données
+        }
+        return formations;
+    }
 	
-	
-	
+	public List<Paiement> getPaiementsByFormation(int idFormation) {
+	    Formation formation = formatiodao.findById(idFormation).orElse(null);
+	    if (formation != null) {
+	        return formation.getPaiements();
+	    }
+	    return null;
+	}
 }
