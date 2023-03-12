@@ -19,6 +19,6 @@ public interface IFormationService {
 	
 	public Formation recupererParId(int id);
 	
-	
+	 public List<Formation> getAllFormationsWithParticipantsAndFormateurs() ;
 
 }

@@ -3,6 +3,7 @@ package com.intiFormation.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Participant;
+import com.intiFormation.service.IFormationService;
 import com.intiFormation.service.IParticipantService;
 
 @RestController
@@ -23,6 +25,10 @@ public class ParticipantController {
 
 	@Autowired
 	private IParticipantService participantService;
+	
+	
+	@Autowired
+	private IFormationService formationService;
 
 	@GetMapping("/")
 	public List<Participant> getAllParticipants() {
@@ -50,4 +56,18 @@ public class ParticipantController {
 	public void updateParticipant(@RequestBody Participant participant) {
 		participantService.updateParticipant(participant);
 	}
+	
+	@PostMapping("/formations/{idForm}/participants/{idPers}")
+	public ResponseEntity<String> addParticipantToFormation(@PathVariable int idForm, @PathVariable int idPers) {
+	    participantService.addParticipantToFormation(idForm, idPers);
+	    return ResponseEntity.ok("Participant ajouté avec succès à la formation");
+	}
+
+	  @DeleteMapping("/formations/{idForm}/participants/{idPers}")
+	  public ResponseEntity<String> removeParticipantFromFormation(@PathVariable int idForm, @PathVariable int idPers) {
+	   participantService.removeParticipantFromFormation(idForm, idPers);
+	    return ResponseEntity.ok("Participant supprimé de la formation !");
+	  }
+
+
 }

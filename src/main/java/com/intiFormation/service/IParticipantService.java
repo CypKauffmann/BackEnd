@@ -11,4 +11,8 @@ public interface IParticipantService {
 	public void updateParticipant(Participant participant);
 	public List<Participant> getAllParticipants();
 	public List<Participant> getFormationsWithParticipants();
+	public List<Participant> getParticipantsWithoutFormation();
+	public void addParticipantToFormation(int idFormation, int idParticipant);
+	public void removeParticipantFromFormation(int idForm, int idPers);
+
 }

@@ -63,7 +63,7 @@ public class PersonneController {
 	}
 	
 	@PutMapping("/personnes")
-	public void modifier(@RequestBody Personne pers)
+	public void putai(@RequestBody Personne pers)
 	{
 		personneservice.ajoutPers(pers) ;
 	}
