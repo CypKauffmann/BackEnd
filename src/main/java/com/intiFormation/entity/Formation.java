@@ -13,6 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Formation {
@@ -29,10 +30,11 @@ public class Formation {
 	private int duree;
 
 	@ManyToMany(mappedBy = "formations")
-	@JsonIgnore
+    @JsonIgnoreProperties("formations")
 	private List<Formateur> formateurs;
 
-	@ManyToMany(mappedBy = "formations",fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "formations", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("formations")
 	@JsonIgnore
 	private List<Participant> participants;
 

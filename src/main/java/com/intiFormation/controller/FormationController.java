@@ -17,6 +17,7 @@ import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IFormationService;
+import com.intiFormation.service.IParticipantService;
 
 @RestController
 @RequestMapping("/api")
@@ -26,6 +27,11 @@ public class FormationController {
 	
 	@Autowired
 	private IFormationService formationService;
+
+	@Autowired
+	private IParticipantService participantService;
+
+
 
 	
 	//afficher la liste 
@@ -83,6 +89,20 @@ public class FormationController {
 	{
 		formationService.suppression(idForm);
 	}
+
+
+
+    @GetMapping("/participants-formateurs")
+    public List<Formation> getAllFormationsWithParticipantsAndFormateurs() {
+        return formationService.getAllFormationsWithParticipantsAndFormateurs();
+    }
+
+    @GetMapping("/participants-sans-formation")
+    public List<Participant> getParticipantsWithoutFormation() {
+      return participantService.getParticipantsWithoutFormation();
+    }
+    
+	
 
 	
 	@GetMapping("/formations/participants/{idForm}")

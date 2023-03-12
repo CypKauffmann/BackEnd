@@ -61,6 +61,9 @@ public class PersonneController {
 		personneservice.supprimePers(id) ;
 	}
 	
+
+	
+	
 	@PutMapping(value = "/personnes", produces = "application/json")
 	public void modifier(@RequestBody Personne pers)
 	{
