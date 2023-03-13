@@ -25,5 +25,6 @@ public interface IUtilisateurservice {
 	public void assignFormateur(Long idPers);
 
 	public void assignCommercial(Long idPers);
-
+	public Utilisateur chercherParUsername(String username) ;
+	public boolean verifierUsername(Utilisateur u);
 }
