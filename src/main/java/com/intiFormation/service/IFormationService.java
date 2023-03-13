@@ -23,6 +23,6 @@ public interface IFormationService {
 	public List<Formation> getAllFormationsWithPaiements() ;
 	public List<Paiement> getPaiementsByFormation(int idFormation);
 	
-	//public List<Formation> getFormationsAvecParticipants();
+ public List<Formation> getAllFormationsWithParticipantsAndFormateurs() ;
 
 }

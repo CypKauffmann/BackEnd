@@ -4,11 +4,14 @@ import java.util.List;
 
 import java.util.Optional;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.FormationDao;
+import com.intiFormation.dao.ParticipantDao;
 import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Paiement;
 
 @Service
@@ -17,7 +20,10 @@ public class FormationService implements IFormationService{
 	
 	@Autowired
 	private FormationDao formatiodao;
-	
+
+	@Autowired
+	private ParticipantDao participantDao;
+
 
 	//ajout d'un paiement
 	public Formation ajout(Formation formation)
@@ -65,6 +71,18 @@ public class FormationService implements IFormationService{
         return formations;
     }
 	
+	 public List<Formation> getAllFormationsWithParticipantsAndFormateurs() {
+	        List<Formation> formations = formatiodao.findAll();
+	        for (Formation formation : formations) {
+	            Hibernate.initialize(formation.getParticipants());
+	            Hibernate.initialize(formation.getFormateurs());
+	        }
+	        return formations;
+	    }
+	
+	 
+	 
+	 
 	public List<Paiement> getPaiementsByFormation(int idFormation) {
 	    Formation formation = formatiodao.findById(idFormation).orElse(null);
 	    if (formation != null) {

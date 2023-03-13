@@ -20,7 +20,6 @@ public class Commercial extends Utilisateur {
 	@JsonIgnore
 	private List<Historique> historiquesC;
 	
-	@JsonIgnore
 	public List<RendezVous> getRendezVousC() {
 		return rendezVousC;
 	}
