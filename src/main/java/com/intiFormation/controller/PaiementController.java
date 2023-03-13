@@ -72,6 +72,9 @@ public void deletePaiement(@PathVariable("idPaie") int idPaie)
 	paiementService.suppression(idPaie);
 }
 
-
+@GetMapping("/paiements/{idPaie}/formation")
+public Formation trouverFormationParIdPaiement(@PathVariable("idPaie") int idPaie) {
+  return paiementService.trouverFormationParIdPaiement(idPaie);
+}
 
 }

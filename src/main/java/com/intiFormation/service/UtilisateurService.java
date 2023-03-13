@@ -70,7 +70,25 @@ public class UtilisateurService implements IUtilisateurservice {
 	    utilisateurDao.addCommercial(idPers);
 	    utilisateurDao.assignCommercialRole(idPers);
 	}
+	
+	public Utilisateur chercherParUsername(String username) {
+		return utilisateurDao.findByUsername(username);
+	}
+
+	public boolean verifierUsername(Utilisateur u) {
+		List<Utilisateur> utilisateurs = utilisateurDao.findAll();
+		boolean resultat = true;
+		for (Utilisateur user : utilisateurs) {
+			if (user.getUsername().equals(u.getUsername())) {
+				resultat = false;
+				break;
+			}
+		}
+		return resultat;
+	}
 
 
-
+	
+	
+	
 }
