@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.PaiementDao;
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
 
 @Service
@@ -57,4 +58,18 @@ public class PaiementService implements IPaiementService{
 	{
 		paiementdao.findById(idPaie);
 	}
+	
+	
+	
+	
+	public Formation trouverFormationParIdPaiement(int idPaie) {
+	    Paiement paiement = paiementdao.getOne(idPaie);
+	    List<Formation> formations = paiement.getFormations();
+	    return formations.isEmpty() ? null : formations.get(0);
+	  }
+	
+	
+	
+	
+	
 }

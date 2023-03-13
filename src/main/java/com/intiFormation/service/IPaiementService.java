@@ -2,6 +2,7 @@ package com.intiFormation.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
 
 public interface IPaiementService {
@@ -25,4 +26,6 @@ public interface IPaiementService {
 		
 	//valider un paiement
 	public void validerPaiement(int idPaie);
+	
+	public Formation trouverFormationParIdPaiement(int idPaie);
 }
