@@ -35,7 +35,6 @@ public class Formation {
 
 	@ManyToMany(mappedBy = "formations", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("formations")
-	@JsonIgnore
 	private List<Participant> participants;
 
 	@ManyToMany(mappedBy = "formations")

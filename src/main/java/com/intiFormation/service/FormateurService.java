@@ -3,6 +3,8 @@ package com.intiFormation.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,7 +59,10 @@ public class FormateurService implements IFormateurService{
 	        return formateurdao.findAllWithFormations();
 	    }
 
-		
+		@Transactional
+		public void addFormateurToFormation(int idForm, int idPers) {
+			formateurdao.addFormateurToFormation(idPers, idForm);
+		}
 		
 	
 }

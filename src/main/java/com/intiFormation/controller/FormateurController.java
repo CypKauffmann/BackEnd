@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,6 +64,10 @@ public class FormateurController {
 		formateurService.suppression(idFormateur);
 	}
 
-	
+	@PostMapping("/formations/{idForm}/formateurs/{idPers}")
+	public ResponseEntity<String> addFormateurToFormation(@PathVariable int idForm, @PathVariable int idPers) {
+	    formateurService.addFormateurToFormation(idForm, idPers);
+	    return ResponseEntity.ok("Formateur ajouté avec succès à la formation");
+	}
 
 }
