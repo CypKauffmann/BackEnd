@@ -62,7 +62,7 @@ public class PersonneController {
 		personneservice.supprimePers(id) ;
 	}
 	
-	
+
 	@PutMapping("/personnes/{idPers}")
 	public ResponseEntity<Personne> modifier(@PathVariable("idPers") int idPers, @RequestBody Personne personne) {
 	    Personne pers = personneservice.selectById(idPers);
