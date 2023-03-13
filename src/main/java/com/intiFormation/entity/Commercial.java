@@ -19,7 +19,7 @@ public class Commercial extends Utilisateur {
 	@OneToMany(mappedBy = "commercial")
 	@JsonIgnore
 	private List<Historique> historiquesC;
-
+	
 	public List<RendezVous> getRendezVousC() {
 		return rendezVousC;
 	}
