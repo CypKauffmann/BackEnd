@@ -40,7 +40,8 @@ public class Security extends WebSecurityConfigurerAdapter {
 		http.csrf().disable(). // protection CSRF
 				authorizeRequests()
 				.antMatchers(HttpMethod.OPTIONS).permitAll()
-				.antMatchers("/api/inscription").permitAll()
+				.antMatchers("/api/utilisateurs/").permitAll()
+				.antMatchers("/api/formations").permitAll()
 				.antMatchers("/api/loginUserJwt").permitAll().anyRequest().authenticated().and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(requestFilter, UsernamePasswordAuthenticationFilter.class);
