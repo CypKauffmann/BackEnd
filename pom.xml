@@ -52,21 +52,8 @@
 		<version>0.9.1</version>
 	</dependency>
 
-	<dependency>
-		<groupId>com.h2database</groupId>
-		<artifactId>h2</artifactId>
-	</dependency>
+	
 
-	<dependency>
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-	</dependency>
-
-	<dependency>
-		<groupId>com.intiFormation</groupId>
-		<artifactId>GestionPersonneSpringData</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
 </dependencies>
 	<build>
 		<plugins>

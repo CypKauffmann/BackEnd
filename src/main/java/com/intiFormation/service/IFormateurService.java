@@ -29,4 +29,6 @@ public interface IFormateurService {
 	
 	public List<Formateur> getFormateursWithFormations();
 	public void addFormateurToFormation(int idForm, int idPers);
+	
+	public void removeFormateurFromFormation(int idForm, int idPers);
 }

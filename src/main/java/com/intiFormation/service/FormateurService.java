@@ -64,6 +64,11 @@ public class FormateurService implements IFormateurService{
 			formateurdao.addFormateurToFormation(idPers, idForm);
 		}
 		
+		
+		public void removeFormateurFromFormation(int idForm, int idPers) {
+		    // Appel de la méthode removeByIdFormAndIdPers du dao participantDao
+			formateurdao.removeByIdFormAndIdPers(idPers, idForm);
+		  }
 	
 }
 
