@@ -20,5 +20,10 @@ public interface FormateurDao extends JpaRepository<Formateur, Integer>{
 	  @Query(value = "INSERT INTO tab_Formateur_Formation (id_formateur, id_formation) VALUES (?1, ?2)", nativeQuery = true)
 	  public void addFormateurToFormation(int idPers, int idForm);
 	
+	 @Transactional
+	  @Modifying
+	  @Query(value = "DELETE FROM tab_Formateur_Formation WHERE id_formateur = ?1 AND id_formation = ?2", nativeQuery = true)
+	  public void removeByIdFormAndIdPers(int idPers, int idForm);
+
 	
 }

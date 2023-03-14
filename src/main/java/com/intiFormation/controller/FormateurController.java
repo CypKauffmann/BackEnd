@@ -70,4 +70,12 @@ public class FormateurController {
 	    return ResponseEntity.ok("Formateur ajouté avec succès à la formation");
 	}
 
+	@DeleteMapping("/formations/{idForm}/formateurs/{idPers}")
+	public ResponseEntity<String> removeFormateurFromFormation(@PathVariable int idForm, @PathVariable int idPers) {
+	    formateurService.removeFormateurFromFormation(idForm, idPers);
+	    return ResponseEntity.ok("Formateur retiré avec succès de la formation");
+	}
+
+	
+	
 }
